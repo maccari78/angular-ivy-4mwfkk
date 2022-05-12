@@ -1,0 +1,20 @@
+<!--  VIEW - TEMPLATE -->
+
+<!-- EXPRESIONES {{}}-->
+<p>hola {{ nombre }} works!</p>
+
+<!-- DIRECTIVA ESTRUCTURAL -->
+<button *ngIf="!despedida" (click)="doDespedir()">Despedir</button>
+
+<div *ngIf="despedida">
+  <!-- EXPRESIONES CON PIPE O FORMATEADOR -->
+  <h1>Hasta la Proxima! Premio Acumulado {{ premio | currency }}</h1>
+
+  <!-- ENLACE del DOM al Componente ()-->
+  <button (click)="doRegresar()">Regresar</button>
+</div>
+<br />
+<button (click)="doVerCotizacionDolar()">Ver Cotizacion Dolar</button>
+<div *ngIf="cotizacion != null">
+  <p>La cotizacion de {{ cotizacion.moneda }} es {{ cotizacion.cotizacion }}</p>
+</div>
